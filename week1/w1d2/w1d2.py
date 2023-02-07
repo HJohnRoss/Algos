@@ -25,11 +25,27 @@ wordDict3 = ["cats", "dog", "sand", "and", "cat"]
 expected3 = False
 
 def wordBreakLVL1(s, wordDict):
-  """
-  :type s: str
-  :type wordDict: List[str]
-  :rtype: bool
-  """
+  resultS = ""
+  newS = ""
+  sNew = ""
+  i = 0
+  while i < len(wordDict):
+    if wordDict[i] in s:
+      resultS += wordDict[i] + "_"
+      tempI = s.index(wordDict[i])
+      while tempI < len(s):
+        newS += s[tempI]
+        if(newS == wordDict[i]):
+          if(i != len(wordDict) - 1):
+            newS += "_"
+          sNew += newS
+          newS = ""
+          break
+        if(tempI == len(s)):
+          newS = ""
+        tempI += 1
+    i += 1
+  return sNew
 
 print(wordBreakLVL1(s1, wordDict1))
 print(wordBreakLVL1(s2, wordDict2))
@@ -67,6 +83,6 @@ def wordBreakLVL2(s, wordDict):
   :rtype: List[str]
   """
 
-print(wordBreakLVL2(string1, word1))
-print(wordBreakLVL2(string2, word2))
-print(wordBreakLVL2(string3, word3))
+# print(wordBreakLVL2(string1, word1))
+# print(wordBreakLVL2(string2, word2))
+# print(wordBreakLVL2(string3, word3))
