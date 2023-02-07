@@ -23,14 +23,27 @@ const test5 = [1, 2, 3, 1]
 const expectedOutput5 = true
 
 const containsDuplicate = (nums) => {
-
+  let obj = {}
+  nums.map((e) => {
+    if (!obj[e.toString()]) {
+      return obj[e.toString()] = 1
+    } else {
+      return obj[e.toString()]++
+    }
+  })
+  for (key in obj) {
+    if (obj[key] > 1) {
+      return true
+    }
+  }
+  return false
 };
 
-console.log(containsDuplicate(test1))
-console.log(containsDuplicate(test2))
-console.log(containsDuplicate(test3))
-console.log(containsDuplicate(test4))
-console.log(containsDuplicate(test5))
+// console.log(containsDuplicate(test1))
+// console.log(containsDuplicate(test2))
+// console.log(containsDuplicate(test3))
+// console.log(containsDuplicate(test4))
+// console.log(containsDuplicate(test5))
 
 /**
  * @param {string} order
@@ -49,16 +62,28 @@ console.log(containsDuplicate(test5))
 // 2nd problem
 // medium
 // try to make this efficiently
-const order1 = "cba"
-const string1 = "abcd"
-const expected3 = "cbad"
+// const order1 = "cba"
+// const string1 = "abcd"
+// const expected3 = "cbad"
 
-const order2 = "cbafg"
-const string2 = "abcd"
-const expected2 = "cbad"
-const customSortString = (order, s) => {
+// const order2 = "cbafg"
+// const string2 = "abcd"
+// const expected2 = "cbad"
+// function customSortString(order, s) {
+//   let result = ""
+//   let i = 0
+//   while () {
+//     for (let j = 0; j < s.length; j++) {
+//       if (order[i] === s[j]) {
+//         result += s[j]
+//       }
+//     }
+//   }
+//   for(let i = 0; i < s.length; i++){
 
-};
+//   }
+//   return result
+// };
 
-console.log(customSortString(order1, string1))
-console.log(customSortString(order2, string2))
+// console.log(customSortString(order1, string1))
+// console.log(customSortString(order2, string2))

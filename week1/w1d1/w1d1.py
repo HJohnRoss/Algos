@@ -20,16 +20,13 @@ expectedOutput4 = True
 test5 = [1, 2, 3, 1]
 expectedOutput5 = True
 def containsDuplicate(nums):
-  """
-  :type nums: List[int]
-  :rtype: bool
-  """
+  return nums
 
-print(containsDuplicate(containsDuplicate(test1)))
-print(containsDuplicate(containsDuplicate(test2)))
-print(containsDuplicate(containsDuplicate(test3)))
-print(containsDuplicate(containsDuplicate(test4)))
-print(containsDuplicate(containsDuplicate(test5)))
+print(containsDuplicate(test1))
+print(containsDuplicate(test2))
+print(containsDuplicate(test3))
+print(containsDuplicate(test4))
+print(containsDuplicate(test5))
 
 
 # * #param {string} order
@@ -59,5 +56,5 @@ def customSortString(order, s):
     :rtype: str
     """
 
-print(customSortString(order1, string1))
-print(customSortString(order2, string2))
+# print(customSortString(order1, string1))
+# print(customSortString(order2, string2))
