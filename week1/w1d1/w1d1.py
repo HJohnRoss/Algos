@@ -20,13 +20,19 @@ expectedOutput4 = True
 test5 = [1, 2, 3, 1]
 expectedOutput5 = True
 def containsDuplicate(nums):
-  return nums
+  dict = {}
+  for num in nums:
+    if num in dict:
+      return True
+    else:
+      dict[num] = 1
+  return False
 
-print(containsDuplicate(test1))
-print(containsDuplicate(test2))
-print(containsDuplicate(test3))
-print(containsDuplicate(test4))
-print(containsDuplicate(test5))
+# print(containsDuplicate(test1))
+# print(containsDuplicate(test2))
+# print(containsDuplicate(test3))
+# print(containsDuplicate(test4))
+# print(containsDuplicate(test5))
 
 
 # * #param {string} order
@@ -49,12 +55,26 @@ order2 = "cbafg"
 string2 = "abcd"
 expected2 = "cbad"
 
-def customSortString(order, s):
-    """
-    :type order: str
-    :type s: str
-    :rtype: str
-    """
+order3 = "kqep"
+string3 = "pekeq"
+expected3 = "kqeep"
 
-# print(customSortString(order1, string1))
-# print(customSortString(order2, string2))
+def customSortString(order, s):
+  result = ""
+  obj = {}
+  for oLetter in order:
+    if oLetter in s:
+      result += oLetter
+  for let in s:
+    if let not in obj:
+      obj[let] = 0
+    else:
+      obj[let] += 1
+    if obj[let] > 0:
+      result += let
+      obj[let] -= 1
+  return result
+
+print(customSortString(order1, string1))
+print(customSortString(order2, string2))
+print(customSortString(order3, string3))
