@@ -20,7 +20,6 @@ const t2 = "car"
 const result2 = false
 
 const isAnagram = function (s, t) {
-
 };
 
 console.log(isAnagram(s1, t1))

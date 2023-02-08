@@ -18,14 +18,24 @@ t2 = "car"
 result2 = False
 
 def isAnagram(s, t):
-  """
-  :type s: str
-  :type t: str
-  :rtype: bool
-  """
+  obj = {}
+  for l in s:
+    if l in obj:
+      obj[l] += 1
+    else:
+      obj[l] = 1
+  for l in t:
+    if l in obj:
+      obj[l] -= 1
+    else:
+      return False
+  for l in obj:
+    if obj[l] != 0:
+      return False
+  return True
 
-print(isAnagram(s1, t1))
-print(isAnagram(s2, t2))
+# print(isAnagram(s1, t1))
+# print(isAnagram(s2, t2))
 
 
 
@@ -43,11 +53,15 @@ print(isAnagram(s2, t2))
 # * Answer: https://www.youtube.com/watch?v=KLlXCFG5TnA&ab_channel=NeetCode
 
 def twoSum(nums, target):
-  """
-  :type nums: List[int]
-  :type target: int
-  :rtype: List[int]
-  """
+  count = -1
+  for num in nums:
+    count += 1
+    i = count + 1
+    while i < len(nums):
+      if nums[i] + num == target:
+        return [count, i]
+      i += 1
+
 
 nums1 = [2,7,11,15]
 target1 = 9
