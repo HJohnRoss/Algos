@@ -50,7 +50,6 @@ const expect1 = [24,12,8,6]
 const arrNums2 = [-1,1,0,-3,3]
 const expect2 = [0,0,9,0,0]
 var productExceptSelf = function (nums) {
-
 };
 
 console.log(productExceptSelf(arrNums1))

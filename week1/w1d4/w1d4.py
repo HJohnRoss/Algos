@@ -18,15 +18,36 @@ nums2 = [1]
 k2 = 1
 expected2 = [1]
 
+nums3 = [4,1,-1,2,-1,2,3]
+k3 = 2
+expected3 = [-1,2]
+
 def topKFrequent(nums, k):
-  """
-  :type nums: List[int]
-  :type k: int
-  :rtype: List[int]
-  """
-  
+  obj = {}
+  arr = []
+  i = 0
+  for num in nums:
+    if num not in obj:
+      obj[num] = 1;
+    else:
+      obj[num] += 1;
+  for key in obj.keys():
+    if len(arr) < k:
+      arr.append(key)
+    lowest = 1000
+    while i < len(arr):
+      # print(arr[i])
+      if obj[arr[i]] < lowest:
+        lowest = arr[i]
+      print(lowest)
+      if obj[key] > lowest:
+        arr[i] = key
+      i += 1
+  return arr
+
 print(topKFrequent(nums1, k1))
 print(topKFrequent(nums2, k2))
+print(topKFrequent(nums3, k3))
 
 
 # * @param {number[]} nums
