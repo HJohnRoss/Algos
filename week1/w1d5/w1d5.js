@@ -24,8 +24,8 @@ const expected3 = true
 // Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome.
 
-var isPalindrome = function(s) {
-    
+var isPalindrome = function (s) {
+
 };
 
 console.log(isPalindrome(s1))
