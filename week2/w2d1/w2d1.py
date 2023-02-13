@@ -21,10 +21,10 @@ def sortedSquares(nums):
   right = len(nums) - 1;
   for i in range(len(arr) - 1, -1, -1):
     if abs(nums[left]) > abs(nums[right]):
-      arr[i] = nums[left] * nums[left];
+      arr[i] = nums[left] ** 2;
       left += 1;
     else:
-      arr[i] = nums[right] * nums[right];
+      arr[i] = nums[right] ** 2;
       right -= 1;
   return arr
 
