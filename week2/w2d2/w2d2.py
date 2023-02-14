@@ -76,8 +76,22 @@ expected5 = "Bulls"
 # this is not a problem on free leetcode (is a problem from algo expert or on the paid version of leetcode)
 # does not have a video but its not to complicated
 def tournamentWinner(competitions, results):
-  # Write your code here.
-  return competitions;
+  i = 0
+  obj = {}
+  winner = ""
+  while i < len(competitions):
+    if results[i] == 0:
+      match = competitions[i][1]
+    else:
+      match = competitions[i][0]
+    if match not in obj:
+      obj[match] = 3
+    else:
+      obj[match] += 3
+    if winner == "" or obj[winner] < obj[match]:
+      winner = match
+    i += 1
+  return winner;
 
 print(tournamentWinner(competitions1, results1))
 print("-------------------")

@@ -31,6 +31,7 @@ const competitions1 = [
   ["Python", "HTML"]
 ]
 const results1 = [0, 0, 1]
+//               0 = index1, 1 = index0 
 const expected1 = "Python"
 
 const competitions2 = [
