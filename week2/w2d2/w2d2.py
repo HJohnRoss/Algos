@@ -91,6 +91,7 @@ def tournamentWinner(competitions, results):
     if winner == "" or obj[winner] < obj[match]:
       winner = match
     i += 1
+  print(obj)
   return winner;
 
 print(tournamentWinner(competitions1, results1))
