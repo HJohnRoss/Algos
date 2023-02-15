@@ -15,6 +15,8 @@
  * solution: https://youtu.be/WTzjTskDFMg
  */
 
+// tip: try to use a stack to store data
+
 const s1 = "()"
 const expected1 = true
 

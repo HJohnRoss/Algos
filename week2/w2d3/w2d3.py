@@ -24,12 +24,24 @@ expected2 = True
 s3 = "(]"
 expected3 = False
 
+s4 = "{[]}"
+expected4 = True
+
 def isValid(s):
-  """
-  :type s: str
-  :rtype: bool
-  """
+  stack = []
+  pairs = {")": "(", "]": "[", "}": "{"}
+  for letter in s:
+    if letter in pairs and stack:
+      popped = stack.pop()
+      if popped != pairs[letter]:
+        return False
+    else:
+      stack.append(letter)
+  if len(stack) > 0:
+    return False
+  return True
 
 print(isValid(s1))
 print(isValid(s2))
 print(isValid(s3))
+print(isValid(s4))
