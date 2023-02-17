@@ -1,33 +1,39 @@
-#  * @param {number[]} nums
-#  * @param {number} target
-#  * @return {number}
-#  * 
-#  * Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target
-#  * exists, then return its index. Otherwise, return -1.
-#  * 
-#  * You must write an algorithm with O(log n) runtime complexity.
-#  * 
-#  * https://leetcode.com/problems/binary-search/\
-#  * solution: https://youtu.be/s4DPM8ct1pI
+# * Definition for singly-linked list.
+# * function ListNode(val, next) {
+# *     this.val = (val===undefined ? 0 : val)
+# *     this.next = (next===undefined ? null : next)
+# * }
+# * @param {ListNode} head
+# * @return {ListNode}
+# * 
+# * Given the head of a singly linked list, reverse the list, and return the reversed list.
+# * 
+# * https://leetcode.com/problems/reverse-linked-list/
+# * solution: https://youtu.be/G0_I-ZF0S38
+# 
+
+head1 = [1,2,3,4,5]
+expected1 = [5,4,3,2,1]
+# // Example 2:
 
 
-nums1 = [-1,0,3,5,9,12]
-target1 = 9
-expected1 = 4
-# Explanation: 9 exists in nums and its index is 4
+head2 = [1,2]
+expected2 = [2,1]
+# // Example 3:
 
-nums2 = [-1,0,3,5,9,12]
-target2 = 2
-expected2 = -1
-# Explanation: 2 does not exist in nums so return -1
+head3 = []
+expected3 = []
 
-def search(nums, target):
-  """
-  :type nums: List[int]
-  :type target: int
-  :rtype: int
-  """
+def reverseList(head):
+  curr = head
+  prev = None
+  while curr:
+      temp = curr.next
+      curr.next = prev
+      prev = curr
+      curr = temp
+  return prev
 
-
-print(search(nums1, target1))
-print(search(nums2, target2))
+print(reverseList(head1))
+print(reverseList(head2))
+print(reverseList(head3))
