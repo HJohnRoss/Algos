@@ -7,7 +7,11 @@
  * You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
  * 
  * Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
- */
+ * 
+ * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+ * solution: https://youtu.be/1pkOgXD63yU
+ * tip: https://www.geeksforgeeks.org/window-sliding-technique/
+*/
 
 
 const prices1 = [7, 1, 5, 3, 6, 4]
