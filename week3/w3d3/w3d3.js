@@ -20,6 +20,5 @@
 
 // do inside of leetcode
 var invertTree = function (root) {
-
+  
 };
-
