@@ -18,7 +18,19 @@
 
 # Do on leetcode https://leetcode.com/problems/maximum-depth-of-binary-tree/
 def maxDepth(root):
-  """
-  :type root: TreeNode
-  :rtype: int
-  """
+  arr = deque()
+
+  if root:
+      arr.append(root)
+  
+  count = 0
+
+  while arr:
+      for i in range(len(arr)):
+          node = arr.popleft()
+          if node.left:
+              arr.append(node.left)
+          if node.right:
+              arr.append(node.right)
+      count += 1
+  return count
