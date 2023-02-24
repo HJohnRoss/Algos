@@ -19,6 +19,29 @@
  * https://leetcode.com/problems/diameter-of-binary-tree
  * solution: https://youtu.be/bkxqA8Rfv04
  */
-var diameterOfBinaryTree = function(root) {
-// Solve this here https://leetcode.com/problems/diameter-of-binary-tree
+var diameterOfBinaryTree = function (root, max = [0]) {
+  if (!root) {
+    return 0;
+  }
+  diameterOfTree(root, max);
+  return max[0]
 };
+
+const diameterOfTree = (root, max) => {
+  const isBaseCase = root === null;
+  if (isBaseCase) return 0;
+
+  return getDiameter(root, max);
+}
+
+var getDiameter = function (root, max) {
+  let left = diameterOfTree(root.left, max);
+  let right = diameterOfTree(root.right, max);
+
+  let result = left + right;
+  max[0] = Math.max(max[0], result)
+
+  const height = Math.max(left, right)
+
+  return height + 1
+}
