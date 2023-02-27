@@ -10,6 +10,8 @@
  * @param {TreeNode} root
  * @return {boolean}
  * 
+ * Given a binary tree, determine if it is height-balanced
+ * 
  * solution: https://youtu.be/QfJsau0ItOY
  * https://leetcode.com/problems/balanced-binary-tree/
  */
