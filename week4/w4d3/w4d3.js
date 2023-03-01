@@ -21,43 +21,41 @@
  * solution: https://youtu.be/E36O5SWp-LE
  */
 var isSubtree = function (root, subRoot) {
-  var isSubtree = function (root, subRoot) {
-    if (!root) {
-      return false
-    }
-
-    if (compare(root, subRoot)) {
-      return true
-    }
-
-    let left = isSubtree(root.left, subRoot)
-    let right = isSubtree(root.right, subRoot)
-
-    if (left || right) {
-      return true
-    }
-    return false
-  };
-
-  const compare = (root, subRoot) => {
-    if (!root || !subRoot) {
-      if (root === subRoot) {
-        return true
-      } else {
-        return false
-      }
-    }
-
-    if (root.val !== subRoot.val) {
-      return false
-    }
-
-    const left = compare(root.left, subRoot.left)
-    const right = compare(root.right, subRoot.right)
-
-    if (left && right) {
-      return true
-    }
+  if (!root) {
     return false
   }
+
+  if (compare(root, subRoot)) {
+    return true
+  }
+
+  let left = isSubtree(root.left, subRoot)
+  let right = isSubtree(root.right, subRoot)
+
+  if (left || right) {
+    return true
+  }
+  return false
 };
+
+const compare = (root, subRoot) => {
+  if (!root || !subRoot) {
+    if (root === subRoot) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  if (root.val !== subRoot.val) {
+    return false
+  }
+
+  const left = compare(root.left, subRoot.left)
+  const right = compare(root.right, subRoot.right)
+
+  if (left && right) {
+    return true
+  }
+  return false
+}
