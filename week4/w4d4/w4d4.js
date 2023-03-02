@@ -18,7 +18,12 @@
 
 // do inside of leetcode
 var invertTree = function (root) {
-  // do in leetcode: https://leetcode.com/problems/invert-binary-tree/
+  if (root) {
+    let left = root.left
+    root.left = invertTree(root.right)
+    root.right = invertTree(left)
+  }
+  return root
 };
 
 /**
@@ -41,5 +46,25 @@ var invertTree = function (root) {
  * Solution: https://youtu.be/OnSn2XEQ4MY
  */
 var maxDepth = function (root) {
-  // Do on leetcode https://leetcode.com/problems/maximum-depth-of-binary-tree/
-  };
+  if (root) {
+    var left = count(root.left)
+    var right = count(root.right)
+    if (left > right) {
+      return left
+    }
+    return right
+  }
+  return 0
+};
+
+const count = (root, max = 1) => {
+  if (root) {
+    var left = count(root.left, max + 1)
+    var right = count(root.right, max + 1)
+    if (left > right) {
+      return left
+    }
+    return right
+  }
+  return max
+}

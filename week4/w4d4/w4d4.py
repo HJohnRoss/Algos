@@ -21,7 +21,7 @@ def invertTree(root):
   :type root: TreeNode
   :rtype: TreeNode
   """
-  
+
 # * Definition for a binary tree node.
 # * function TreeNode(val, left, right) {
 # *     this.val = (val===undefined ? 0 : val)
@@ -43,7 +43,7 @@ def invertTree(root):
 # Do on leetcode https://leetcode.com/problems/maximum-depth-of-binary-tree/
 def maxDepth(root):
   """
-  do in leetcode: https://leetcode.com/problems/invert-binary-tree/
+  do in leetcode: https://leetcode.com/problems/maximum-depth-of-binary-tree/
   :type root: TreeNode
   :rtype: int
   """
