@@ -20,15 +20,13 @@ const Output2 = [[""]]
 const strs3 = ["a"]
 const Output3 = [["a"]]
 var groupAnagrams = function (strs) {
-  const map = {};
+  let map = {};
   for (let i = 0; i < strs.length; i++) {
-    const key = strs[i].split("").sort().join("")
-    console.log(strs[i])
+    let key = strs[i].split("").sort().join("")
     if (!map[key]) {
       map[key] = [];
     }
     map[key].push(strs[i]);
-    
   }
   return map
   // return Object.values(map);
