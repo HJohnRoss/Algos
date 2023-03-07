@@ -17,7 +17,7 @@
 
 
 var isSameTree = function (p, q) {
-   // do in leetcode: https://leetcode.com/problems/same-tree/
+  // do in leetcode: https://leetcode.com/problems/same-tree/
 };
 
 
