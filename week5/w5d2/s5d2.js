@@ -10,8 +10,8 @@
  * https://leetcode.com/problems/group-anagrams/
  */
 
-const strs1 = ["eat","tea","tan","ate","nat","bat"]
-const Output1 = [["bat"],["nat","tan"],["ate","eat","tea"]]
+const strs1 = ["eat", "tea", "tan", "ate", "nat", "bat"]
+const Output1 = [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
 
 const strs2 = [""]
 const Output2 = [[""]]
@@ -20,7 +20,18 @@ const Output2 = [[""]]
 const strs3 = ["a"]
 const Output3 = [["a"]]
 var groupAnagrams = function (strs) {
-
+  const map = {};
+  for (let i = 0; i < strs.length; i++) {
+    const key = strs[i].split("").sort().join("")
+    console.log(strs[i])
+    if (!map[key]) {
+      map[key] = [];
+    }
+    map[key].push(strs[i]);
+    
+  }
+  return map
+  // return Object.values(map);
 };
 
 
