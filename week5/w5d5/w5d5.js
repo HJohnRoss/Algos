@@ -34,7 +34,10 @@ var longestConsecutive = function (nums, maxScore = 0) {
       score++
     }
 
-    maxScore = Math.max(maxScore, score)
+    // maxScore = Math.max(maxScore, score)
+    if(score > maxScore) {
+      maxScore = score
+    }
   }
 
   return maxScore
