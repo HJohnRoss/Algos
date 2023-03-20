@@ -27,7 +27,6 @@ var dailyTemperatures = function (temperatures) {
     }
     stack.push(i)
   }
-
   return result
 };
 
@@ -45,7 +44,9 @@ const smaller = (temperatures, stack, i) => {
 //   let stack = []
 //   let result = []
 //   for (let i = 0; i < temperatures.length; i++) {
-//     while (smaller(temperatures, stack, i)) {
+//     const prev = temperatures[stack[stack.length - 1]]
+//     const curr = temperatures[i]
+//     while (prev < curr) {
 //       let prev = stack.pop()
 //       if(result[prev]) {
 //         result[prev] = i - prev
