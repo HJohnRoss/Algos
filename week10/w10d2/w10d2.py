@@ -21,5 +21,5 @@
 def isValidBST(root):
   """
   do in leetcode: 
-  ahttps://leetcode.com/problems/validate-binary-search-tree/
+  https://leetcode.com/problems/validate-binary-search-tree/
   """
