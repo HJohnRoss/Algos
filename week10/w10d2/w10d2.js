@@ -22,5 +22,11 @@
  */
 
 var isValidBST = function(root) {
-  // do in leetcode: https://leetcode.com/problems/validate-binary-search-tree/
+  let left = root.left
+  let right = root.right
+  while(root) {
+
+  }
+
+  return true
 };
