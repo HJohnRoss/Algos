@@ -19,6 +19,25 @@
  */
 
 
-var buildTree = function(preorder, inorder) {
-  // do in leetcode: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+var buildTree = function (preorder, inorder, max = -Infinity, indices = { preorder: 0, inorder: 0 }) {
+  if (preorder.length <= indices.inorder) {
+    return null
+  }
+
+  if (inorder[indices.inorder] === max) {
+    indices.inorder++
+    return null
+  }
+
+  return dfs(preorder, inorder, max, indices)
 };
+
+const dfs = (preorder, inorder, max, indices) => {
+  const val = preorder[indices.preorder++]
+  const root = new TreeNode(val)
+
+  root.left = buildTree(preorder, inorder, root.val, indices)
+  root.right = buildTree(preorder, inorder, max, indices)
+
+  return root
+}
